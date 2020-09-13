@@ -11,6 +11,7 @@ class WebviewScaffold extends StatefulWidget {
   const WebviewScaffold({
     Key key,
     this.appBar,
+    this.backgroundColor = Colors.white,
     @required this.url,
     this.headers,
     this.javascriptChannels,
@@ -74,6 +75,7 @@ class WebviewScaffold extends StatefulWidget {
   final bool useWideViewPort;
   final bool debuggingEnabled;
   final bool ignoreSSLErrors;
+  final Color backgroundColor;
 
   @override
   _WebviewScaffoldState createState() => _WebviewScaffoldState();
@@ -145,6 +147,7 @@ class _WebviewScaffoldState extends State<WebviewScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: widget.backgroundColor,
       appBar: widget.appBar,
       resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
       persistentFooterButtons: widget.persistentFooterButtons,
